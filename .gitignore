@@ -15,5 +15,5 @@ gen
 client/node_modules
 server/node_modules
 
-.gitignore
-package.json
+#.gitignore
+#package.json
