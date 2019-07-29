@@ -1,0 +1,17 @@
+{
+  "name": "mern_weather_final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/server/server.js",
+  "scripts": {
+    "client-install": "cd client && npm install",
+    "server-install": "cd server && npm install",
+    "start": "cd server && node server.js",
+    "server": "cd server && nodemon server.js",
+    "client": "cd client && npm start",
+    "dev": "cd server && concurrently \"npm run start\" \"npm run client\"",
+    "heroku-postbuild": "cd client && NPM_CONFIG_PRODUCTION=false npm install&& npm run build"
+  },
+  "author": "",
+  "license": "ISC"
+}
