@@ -10,7 +10,7 @@
     "server": "cd server && nodemon server.js",
     "client": "cd client && npm start",
     "dev": "cd server && concurrently \"npm run start\" \"npm run client\"",
-    "heroku-postbuild": "cd client && NPM_CONFIG_PRODUCTION=false npm install&& npm run build"
+    "heroku-postbuild": "cd server && NPM_CONFIG_PRODUCTION=false npm install && cd ../client && NPM_CONFIG_PRODUCTION=false npm install && npm run build && cd ../"
   },
   "author": "",
   "license": "ISC"
