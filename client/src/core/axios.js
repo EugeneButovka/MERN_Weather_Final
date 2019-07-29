@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // instance for local server - DB for users and queries
 export const instance = axios.create({
-    baseURL: 'http://localhost:5000'
+    //baseURL: 'http://localhost:5000'
 });
 
 // Alter defaults after instance has been created
