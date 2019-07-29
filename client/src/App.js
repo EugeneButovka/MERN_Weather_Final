@@ -26,9 +26,6 @@ class App extends React.Component {
         );
     }
 }
-//TODO: main page - google react auto complete
-//TODO: user about&back end req
-//TODO: user weatherlist&back end req
-//TODO: user weather details&back end req
+
 
 export default App;

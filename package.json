@@ -6,9 +6,9 @@
   "scripts": {
     "client-install": "cd client && npm install",
     "server-install": "cd server && npm install",
-    "start": "cd server && node server.js",
-    "server": "cd server && nodemon server.js",
-    "client": "cd client && npm start",
+    "start": "cd server && node server.js && cd ../",
+    "server": "cd server && nodemon server.js && cd ../",
+    "client": "cd client && npm start && cd ../",
     "dev": "cd server && concurrently \"npm run start\" \"npm run client\"",
     "heroku-postbuild": "cd server && NPM_CONFIG_PRODUCTION=false npm install && cd ../client && NPM_CONFIG_PRODUCTION=false npm install && npm run build && cd ../"
   },

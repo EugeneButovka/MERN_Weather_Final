@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // body parser for JSON middleware
 
-const db = config.get('mongoURI');
+const db = (process.env.NODE_ENV === 'production' ? config.get('mongoURI_external') : config.get('mongoURI'));
 
 //connect ot mongoDB
 mongoose.connect(
@@ -27,13 +27,17 @@ app.use('/auth', require('./routes/auth.route')); // POST /login  POST /register
 app.use('/api', authMiddleware.checkToken, require('./routes/api.route'));
 
 
-//TODO: weather api:
-//user weather request history list (restricted .find(.., {fields}) request to DB)
-//user detailed weather request on date (big .find() request to DB)
+//serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+    //set static folder
+    app.use(express.static('client/build'));
+    
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    })
+}
 
-//TODO: weather data model
-//TODO
+const port = process.env.PORT || 5000; //first component for HEROCU
 
-const port = 5000;
 
 app.listen(port, () => console.log(`server started on port ${port}`));

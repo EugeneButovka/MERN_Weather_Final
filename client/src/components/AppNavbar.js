@@ -118,8 +118,8 @@ class AppNavbarNoRouter extends React.Component {
                     </NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="https://reactstrap.github.io/components/navbar/">
-                        Github
+                    <NavLink href="https://github.com/EugeneButovka/MERN_Weather_Final">
+                        <u>Project Repository</u>
                     </NavLink>
                 </NavItem>
                 <NavItem>
